@@ -180,3 +180,83 @@ console.log("Guía JavaScript iniciada");
 
   console.log(sumar(10, 5));
 }
+
+// Ejercicio 16: Crear un objeto jugador
+{
+  const jugador = {
+    nombre: "Luna",
+    vida: 100,
+    energia: 80,
+    nivel: 1,
+    inventario: ["espada", "poción"]
+  };
+
+  console.log(jugador.nombre);
+  console.log(jugador.vida);
+  console.log(jugador.energia);
+  console.log(jugador.nivel);
+  console.log(jugador.inventario);
+}
+
+// Ejercicio 17: Modificar propiedades de un objeto
+{
+  const jugador = {
+    nombre: "Kai",
+    nivel: 1,
+    monedas: 0
+  };
+
+  jugador.nivel++;
+  jugador.monedas += 50;
+
+  console.log(jugador);
+}
+
+// Ejercicio 18: Array de objetos
+{
+  const personajes = [
+    { nombre: "Luna", vida: 100, tipo: "maga", nivel: 3 },
+    { nombre: "Kai", vida: 120, tipo: "guerrero", nivel: 4 },
+    { nombre: "Nina", vida: 90, tipo: "arquera", nivel: 2 }
+  ];
+
+  for (let i = 0; i < personajes.length; i++) {
+    console.log(personajes[i].nombre + " es " + personajes[i].tipo + " y está en nivel " + personajes[i].nivel);
+  }
+}
+
+// Ejercicio 19: Filtrar personajes por nivel (usa "personajes" de data.js)
+{
+  const personajesFuertes = personajes.filter((personaje) => {
+    return personaje.nivel >= 3;
+  });
+
+  console.log(personajesFuertes);
+}
+
+// Ejercicio 20: Obtener solo los nombres
+{
+  const nombres = personajes.map((personaje) => {
+    return personaje.nombre;
+  });
+
+  console.log(nombres);
+}
+
+// Ejercicio 21: Buscar un personaje
+{
+  const personajeEncontrado = personajes.find((personaje) => {
+    return personaje.nombre === "Kai";
+  });
+
+  console.log(personajeEncontrado);
+}
+
+// Ejercicio 22: Calcular total de vida
+{
+  const vidaTotal = personajes.reduce((acumulador, personaje) => {
+    return acumulador + personaje.vida;
+  }, 0);
+
+  console.log(vidaTotal);
+}

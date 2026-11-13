@@ -22,16 +22,18 @@ console.log("Guía JavaScript iniciada");
 }
 
 // Ejercicio 3: Convertir texto a número
+// NOTA: los ejercicios 3, 24 y 25 usan el mismo botón "btn".
+// Para probar uno, descomentá su addEventListener y comentá los otros.
 {
   const input = document.getElementById("dato");
   const boton = document.getElementById("btn");
   const mensaje = document.getElementById("mensaje");
 
-  boton.addEventListener("click", function () {
-    const valor = input.value;
-    const numero = Number(valor);
-    mensaje.textContent = numero + 10;
-  });
+  // boton.addEventListener("click", function () {
+  //   const valor = input.value;
+  //   const numero = Number(valor);
+  //   mensaje.textContent = numero + 10;
+  // });
 }
 
 // Ejercicio 4: Validar edad mínima
@@ -259,4 +261,58 @@ console.log("Guía JavaScript iniciada");
   }, 0);
 
   console.log(vidaTotal);
+}
+
+// Ejercicio 23: Mostrar mensaje en pantalla
+{
+  const mensaje = document.getElementById("mensaje");
+
+  mensaje.textContent = "Bienvenido a la guía de JavaScript";
+  mensaje.style.color = "#CC1155";
+}
+
+// Ejercicio 24: Botón que suma puntos
+// (comentado porque comparte el botón "btn" con el ejercicio 25, ver nota del ejercicio 3)
+{
+  const boton = document.getElementById("btn");
+  const mensaje = document.getElementById("mensaje");
+
+  let puntos = 0;
+
+  // boton.addEventListener("click", function () {
+  //   puntos = puntos + 10;
+  //   mensaje.textContent = "Puntos: " + puntos;
+  // });
+}
+
+// Ejercicio 25: Validar nombre de usuario (este es el listener activo del botón "btn")
+{
+  const input = document.getElementById("dato");
+  const boton = document.getElementById("btn");
+  const mensaje = document.getElementById("mensaje");
+
+  boton.addEventListener("click", function () {
+    if (input.value === "") {
+      mensaje.textContent = "Ingresá un nombre para continuar";
+    } else {
+      mensaje.textContent = "Bienvenido/a, " + input.value;
+    }
+  });
+}
+
+// Ejercicio 26: Guardar puntaje en LocalStorage
+{
+  const jugador = {
+    nombre: "Luna",
+    puntaje: 1500
+  };
+
+  // guardar en localStorage (convertido a texto)
+  localStorage.setItem("jugador", JSON.stringify(jugador));
+
+  // recuperar desde localStorage (convertido de nuevo a objeto)
+  const jugadorRecuperado = JSON.parse(localStorage.getItem("jugador"));
+
+  // mostrar por consola
+  console.log(jugadorRecuperado);
 }

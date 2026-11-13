@@ -83,3 +83,100 @@ console.log("Guía JavaScript iniciada");
       console.log("Opción no válida");
   }
 }
+
+// Ejercicio 7: Cuenta regresiva
+{
+  for (let i = 3; i >= 1; i--) {
+    console.log(i);
+  }
+  console.log("¡Comienza!");
+}
+
+// Ejercicio 8: Sumar puntos por rondas
+{
+  let puntajeTotal = 0;
+
+  for (let ronda = 1; ronda <= 5; ronda++) {
+    puntajeTotal = puntajeTotal + 10;
+  }
+
+  console.log(puntajeTotal);
+
+  // Desafío extra: cada ronda suma una cantidad diferente (10, 20, 30, 40, 50)
+  let puntajeVariable = 0;
+
+  for (let ronda = 1; ronda <= 5; ronda++) {
+    puntajeVariable += ronda * 10;
+  }
+
+  console.log(puntajeVariable);
+}
+
+// Ejercicio 9: Recorrer un inventario
+{
+  const inventario = ["espada", "poción", "llave", "escudo", "mapa"];
+
+  console.log(inventario[0]);                      // primer objeto
+  console.log(inventario[inventario.length - 1]);  // último objeto
+  console.log(inventario.length);                  // cantidad total
+}
+
+// Ejercicio 10: Mostrar todos los objetos
+{
+  const inventario = ["espada", "poción", "llave", "escudo"];
+
+  for (let i = 0; i < inventario.length; i++) {
+    console.log(inventario[i]);
+  }
+}
+
+// Ejercicio 11: Agregar y quitar elementos
+{
+  let mochila = [];
+
+  mochila.push("linterna");
+  mochila.push("comida");
+  mochila.push("mapa");
+  mochila.pop();
+
+  console.log(mochila);
+}
+
+// Ejercicio 12: Buscar un objeto en el inventario
+{
+  const inventario = ["espada", "poción", "llave", "escudo"];
+
+  if (inventario.includes("llave")) {
+    console.log("La puerta se abre");
+  } else {
+    console.log("Necesitás una llave");
+  }
+}
+
+// Ejercicio 13: Crear una función de saludo
+{
+  function saludarUsuario(nombre) {
+    console.log("Bienvenido/a, " + nombre);
+  }
+
+  saludarUsuario("Milo");
+}
+
+// Ejercicio 14: Función para calcular daño
+{
+  function calcularVidaRestante(vida, danio) {
+    return vida - danio;
+  }
+
+  let resultado = calcularVidaRestante(100, 30);
+  console.log("vida restante: " + resultado);
+}
+
+// Ejercicio 15: Usar arrow functions
+{
+  const sumar = (a, b) => {
+    return a + b;
+  };
+
+  console.log(sumar(10, 5));
+}
